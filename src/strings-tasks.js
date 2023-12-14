@@ -54,8 +54,9 @@ function isString(value) {
  *   concatenateStrings('aa', '') => 'aa'.
  *   concatenateStrings('', 'bb') => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {
+  return value1 + value2;
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -179,8 +180,17 @@ function removeLastOccurrences(/* str, value */) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  let res = 0;
+  if (!str) {
+    res = 0;
+  } else {
+    for (let i = 0; i < str.length; i += 1) {
+      res += str.charCodeAt([i]);
+    }
+  }
+  return res;
+  // throw new Error('Not implemented');
 }
 
 /**
