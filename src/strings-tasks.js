@@ -505,8 +505,19 @@ function extractEmails(str) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  let res = '';
+  for (let i = 0; i < str.length; i += 1) {
+    let char = str.charCodeAt(i);
+    if (char >= 65 && char <= 90) {
+      char = ((char - 65 + 13) % 26) + 65;
+    } else if (char >= 97 && char <= 122) {
+      char = ((char - 97 + 13) % 26) + 97;
+    }
+    res += String.fromCharCode(char);
+  }
+  return res;
+  // throw new Error('Not implemented');
 }
 
 /**
